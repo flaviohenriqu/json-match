@@ -52,7 +52,7 @@ MOCK_JSON_DICT_OF_LIST = '''
                                 "GlossDef": {
                                     "para":
                                     "A meta-markup language, used to create markup languages such as DocBook.",
-                                    "GlossSeeAlso": [{"value": "GML", "type": "XML"}]
+                                    "GlossSeeAlso": [{"value": "GML", "type": []}]
                                 },
                                 "GlossSee": "markup"
                             }
@@ -108,14 +108,14 @@ class TestJsonMatch(unittest.TestCase):
     def test007_dict_of_list_of_objects_response(self):
         result = match(expected='{"glossary": {"GlossDiv": '
                                 '{"GlossList": {"GlossEntry": {"GlossDef": '
-                                '{"GlossSeeAlso": [{"value": "GML", "type": "XML"}]}}}}}}',
+                                '{"GlossSeeAlso": [{"value": "GML", "type": []}]}}}}}}',
                        actual=MOCK_JSON_DICT_OF_LIST)
         self.assertTrue(result)
 
     def test008_dict_of_list_of_objects_response(self):
         result = match(expected='{"glossary": {"GlossDiv": '
                                 '{"GlossList": {"GlossEntry": {"GlossDef": '
-                                '{"GlossSeeAlso": [{"value": "GML", "type": "JSON"}]}}}}}}',
+                                '{"GlossSeeAlso": [{"value": "GML", "type": ["JSON"]}]}}}}}}',
                        actual=MOCK_JSON_DICT_OF_LIST)
         self.assertFalse(result)
 
