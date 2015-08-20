@@ -2,3 +2,13 @@
 omit =
     */python?.?/*
     */site-packages/nose/*
+[report]
+omit = 
+    __init__.py 
+    */python?.?/* 
+    */site-packages/nose/*
+
+exclude_lines = 
+    def __repr__
+    pragma: no cover
+    if __name__ == '__main__':
