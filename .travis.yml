@@ -6,8 +6,9 @@ python:
   - "3.4"
 # command to install dependencies
 install:
-  - pip install .
+  - pip install coverage
   - pip install -r requirements.txt
+  - pip install .
 # command to run tests
 script: nosetests --with-coverage --cover-package=json-match
 after_success:
