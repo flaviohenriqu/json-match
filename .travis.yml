@@ -10,6 +10,6 @@ install:
   - pip install -r requirements.txt
   - pip install .
 # command to run tests
-script: nosetests --with-coverage --cover-package=https://github.com/flaviohenriqu/json-match
+script: nosetests --with-coverage
 after_success:
   - coveralls
