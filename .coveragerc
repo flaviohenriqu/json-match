@@ -1,4 +1,5 @@
 [run]
+source = jmatch.py, tests.py
 omit =
     */python?.?/*
     */site-packages/nose/*

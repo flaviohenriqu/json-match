@@ -5,6 +5,7 @@
 *.egg-info/
 .idea
 .tox
+.coverage
 tmp/
 dist/
 env/
