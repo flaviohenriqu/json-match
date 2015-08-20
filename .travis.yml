@@ -14,6 +14,6 @@ install:
 script:
   - python setup.py install  >/dev/null
   - python -c 'import jmatch'
-  - nosetests --with-coverage --cover-package=json-match
+  - nosetests --with-coverage --cover-package=jmatch
 after_success:
   - coveralls
