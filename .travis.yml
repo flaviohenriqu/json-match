@@ -8,8 +8,8 @@ python:
 install:
   - pip install .
   - pip install -r requirements.txt
-  - pip install python-coveralls
+  - pip install coveralls
 # command to run tests
-script: nosetests
+script: nosetests --with-coverage --cover-package=json-match
 after_success:
   - coveralls
