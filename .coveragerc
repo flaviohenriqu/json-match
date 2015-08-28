@@ -1,10 +1,6 @@
-[run]
-source = jmatch.py, tests.py
-omit =
-    */python?.?/*
-    */site-packages/nose/*
 [report]
-omit = 
+omit =
+    setup.py
     __init__.py 
     */python?.?/* 
     */site-packages/nose/*
