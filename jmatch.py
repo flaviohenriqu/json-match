@@ -19,8 +19,8 @@ def match(expected, actual, debug=False):
             If True value found, false otherwise.
     """
     if debug:
-        print("Expected: ", expected)
-        print("Actual: ", actual)
+        print("Expected: %s" % expected)
+        print("Actual: %s" % actual)
 
     # Extract both json strings.
     expected_json = json.loads(expected)
