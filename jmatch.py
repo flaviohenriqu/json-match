@@ -50,7 +50,8 @@ def _search_in_list(actual, expected):
     """
     found = None
 
-    if isinstance(expected, list) and [item for item in expected if found or _search_in_list(actual, item)]:
+    if (isinstance(expected, list) and
+            [item for item in expected if found or _search_in_list(actual, item)]):
         return True
 
     for item in actual:

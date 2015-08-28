@@ -1,10 +1,4 @@
-doc-warnings: yes
-test-warnings: no
-strictness: veryhigh
-max-line-length: 120
-autodetect: yes
-requirements:
-    - requirements.txt
-pep8:
-    full: true
-
+pylint:
+  disable:
+    - eval-used
+    
