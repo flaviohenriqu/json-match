@@ -96,6 +96,3 @@ def _search_in_dict(actual, expected):
             else:
                 return actual[key] == expected[key]
     return found
-
-
-
