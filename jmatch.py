@@ -97,3 +97,10 @@ def _search_in_dict(actual, expected):
             else:
                 return actual[key] == expected[key]
     return found
+
+if __name__ == "__main__":
+    match(expected={"name": "Jose"},
+          actual={"name": "Joao",
+                  "profission": "engineer",
+                  "city": "Sao Paulo"},
+          debug=True)
