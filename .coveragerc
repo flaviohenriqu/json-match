@@ -8,6 +8,7 @@ omit =
 exclude_lines = 
     def __repr__
     if debug:
+    return True
     pragma: no cover
     if __name__ == '__main__':
         unittest.main()

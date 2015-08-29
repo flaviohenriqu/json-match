@@ -1,3 +1,4 @@
+#!usr/bin/env python
 """
     Json match
 """
@@ -21,16 +22,13 @@ def match(expected, actual, debug=False):
     if debug:
         print("Expected: %s" % expected)
         print("Actual: %s" % actual)
-
     # Extract both json strings.
     expected_json = json.loads(expected)
     actual_json = json.loads(actual)
-
     # check if the actual json is a list
     if isinstance(actual_json, list):
         # search the list of objects
         return _search_in_list(actual_json, expected_json)
-
     return _search_in_dict(actual_json, expected_json)
 
 
@@ -49,20 +47,16 @@ def _search_in_list(actual, expected):
             If True, json found in structure list, false otherwise.
     """
     found = None
-
     if (isinstance(expected, list) and
             [item for item in expected if found or _search_in_list(actual, item)]):
         return True
-
     for item in actual:
         if isinstance(item, list):
             found = _search_in_list(item, expected)
         else:
             found = _search_in_dict(item, expected)
-
         if found:
             return True
-
     return found
 
 
@@ -87,7 +81,6 @@ def _search_in_dict(actual, expected):
                 found = (actual[key] == expected[key])
             else:
                 found = found and (actual[key] == expected[key])
-
             if found:
                 pass
             elif isinstance(actual[key], dict):
@@ -97,10 +90,3 @@ def _search_in_dict(actual, expected):
             else:
                 return actual[key] == expected[key]
     return found
-
-if __name__ == "__main__":
-    match(expected={"name": "Jose"},
-          actual={"name": "Joao",
-                  "profission": "engineer",
-                  "city": "Sao Paulo"},
-          debug=True)
